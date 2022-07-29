@@ -15,11 +15,7 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true)
   const [screenSize, setScreenSize] = useState(null)
 
-  useEffect(()=>{
-    const handleSize = () => setScreenSize(window.innerWidth)
-    window.addEventListener('resize', handleSize)
-  },[])
-
+  
   useEffect(()=>{
     if(screenSize < 768){
       setActiveMenu(false)
@@ -27,6 +23,11 @@ const Navbar = () => {
       setActiveMenu(true)
     }
   },[screenSize])
+  useEffect(()=>{
+    const handleSize = () => setScreenSize(window.innerWidth)
+    window.addEventListener('resize', handleSize)
+    setActiveMenu(true)
+  },[])
 
   const menuItems = [
     {
