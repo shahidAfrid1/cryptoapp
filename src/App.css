@@ -1,38 +1,364 @@
-.App {
-  text-align: center;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: 1fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  background-color: #001529;
+  grid-column: 1/-1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-container {
+  background-color: rgb(191, 201, 201);
+}
+
+.navbar-container .logo-container {
+  padding: 1rem;
+  background-color: #001529;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.navbar-container .logo-container .menu-btn {
+  background-color: transparent;
+  color: white;
+  width: 2rem;
+  height: .5rem;
+  margin-left: auto;
+  margin-bottom: .5rem;
+  position: relative;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.navbar-container .logo-container .logo-img {
+  margin-right: 0.5rem;
+}
+
+.navbar-container .logo-container .logo-title {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-bar {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  width: 60vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+.main {
+  grid-column: 1/-1;
+  width: 100%;
+}
+
+
+
+@media (min-width: 800px) {
+  .app {
+    height: 100vh;
+    overflow: hidden;
+    grid-template-columns: 25% 75%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar {
+    grid-column: 1/2;
   }
+
+  .navbar-container {
+    position: relative;
+  }
+
+  .navbar-container .logo-container .menu-btn {
+    display: none;
+  }
+
+  .menu-bar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .main {
+    grid-column: 2/-1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+}
+
+
+/* HomePage */
+
+.stats{
+  padding: 1rem;
+  background-color: rgb(247, 244, 244);
+}
+
+.stats .stats-row .stats-column{
+  padding: .2rem 0;
+}
+
+.heading-container{
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* cryptocurrencies */
+
+.input-ContainerFilled{
+  padding: 2rem 5rem;
+}
+
+.crypro-card-container,.cryto-news-container{
+  padding: 1rem;
+  max-width: 100%;
+}
+
+.crypro-card-container .crypto-card .card-img{
+  width: 2rem;
+}
+
+/* news card  */
+
+.select-crypto-container{
+  padding: 2rem 1rem;
+}
+
+.select-crypto-container .select-crypto{
+  width: 20rem;
+}
+
+.crypto-news-card .card-image-conatiner{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.crypto-news-card .card-image-conatiner .card-title{
+  text-transform: lowercase !important;
+}
+
+.crypto-news-card .card-image-conatiner img{
+  max-width: 14rem;
+  max-height: 7rem;
+}
+
+.crypto-news-card .card-description{
+  color: black;
+}
+.crypto-news-card .provider-container .provider-name{
+  margin-left: 1rem;
+}
+
+.crypto-news-card .time{
+  text-align: right !important;
+}
+
+
+/* cryptoDetailes */
+
+.coin-detail-container{
+  margin: 30px;
+}
+
+.coin-heading-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  gap: 10px;
+}
+
+.coin-heading-container .coin-name{
+  font-weight: 900;
+  color: var(--pink);
+}
+
+.coin-heading-container p{
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.stats-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.stats-container h2{
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-top: 20px;
+  color: var(--pink);
+}
+
+.coin-details-heading{
+  font-weight: 700 !important;
+  margin-top: 20px !important;
+  color: var(--pink) !important;
+}
+
+.coin-stats{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+  opacity: 0.9;
+  padding: 20px;
+
+}
+
+.coin-stats-name{
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.stats-title{
+  font-weight: 800;
+}
+
+.coin-value-statistics-heading p{
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.coin-desc-link{
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.coin-desc-link h2{
+  font-weight: 700;
+  color: var(--pink);
+}
+
+.coin-desc-link p{
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.coin-desc-link a{
+  color: var(--pink);
+}
+
+.coin-desc-link h3{
+  font-weight: 700;
+}
+
+.coin-desc{
+  flex: 0.5;
+}
+
+.coin-links{
+padding: 0px 20px;
+  flex: 0.5;
+}
+
+.coin-link{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+}
+
+.link-name{
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.coin-link a{
+  color: var(--pink);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.coin-link:hover, .coin-stats:hover{
+  background-color: var(--bgSecondary);
+}
+
+@media screen and (max-width:1000px){
+  .stats-container{
+      flex-direction: column;
+  }
+  .coin-desc-link{
+      flex-direction: column;
+  }
+  .stats-container h2{
+      margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .coin-links{
+      padding: 0px;
+  }
+  .coin-detail-container{
+      margin: 0;
+  }
+}
+@media screen and (max-width: 500px){
+  .heading{
+      margin-top: 20px;
+  }
+}
+
+/* chartjs */
+
+.chart-container{
+  width: 100% !important;
+}
+
+.chart-container .chart-header{
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  color: #0071bd;
+}
+.chart-container .chart-title{
+  color: #0071bd !important;
+}
+.chart-container .price-container{
+  display: flex !important;
+  gap: 20px !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+}
+.chart-container .price-container .price-change{
+  font-weight: 900 !important;
+}
+.chart-container .price-container .current-price{
+  margin-top: 0px !important;
+  font-weight: 900 !important;
+}
+
+/* loader */
+
+.loader{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
